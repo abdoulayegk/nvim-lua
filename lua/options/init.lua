@@ -14,6 +14,7 @@ set.hlsearch = false
 set.incsearch = true
 set.ignorecase = true
 set.smartcase = true
+set.autoindent = true
 
 set.termguicolors = true
 set.showmode = false
@@ -21,13 +22,13 @@ set.splitbelow = true
 set.splitright = true
 set.wrap = false
 set.breakindent = true
-set.scrolloff = 5
+set.scrolloff = 7
 set.fileencoding = "utf-8"
 set.conceallevel = 2
 
 set.relativenumber = true
 set.number = true
-set.cursorline = true
+-- set.cursorline = true
 set.wildmenu = true
 set.completeopt = "menuone,noselect"
 
@@ -50,6 +51,10 @@ cmd [[au BufWritePre * :%s/\s\+$//e]]
 cmd [[au BufEnter * set fo-=c fo-=r fo-=o]]
 opt.history = 100         -- remember n lines in history
 opt.lazyredraw = true     -- faster scrolling
+opt.smartindent = true                -- make indenting smarter again
+vim.o.fileformat = vim.bo.fileformat
 
 
+
+--
 

@@ -44,7 +44,7 @@ keymap("i", "jj", "<ESC>", opts)
 
 -- Quick save and exit neovim
 keymap('n', '<Leader>w', ':write<CR>', {noremap = true})
-keymap('n', '<Leader>e', ':quit<CR>', {noremap = true})
+keymap('n', '<Leader>e', ':quit!<CR>', {noremap = true})
 
 -- Stay in indent mode
 keymap("v", "<", "<gv", opts)
@@ -59,5 +59,9 @@ augroup END
 ]], true)
 
 opt.colorcolumn = '80'        -- line lenght marker at 80 columns
+
+
+-- Markdown preview settings
+keymap('n', '<Leader>m', ':MarkdownPreview<CR>', {noremap = true})
 
 

@@ -7,17 +7,12 @@ return require("packer").startup(function()
 	use("nvim-lualine/lualine.nvim") --> a statusline written in lua
 	use("romgrk/barbar.nvim") --> tabs for neovim
 	use("kyazdani42/nvim-tree.lua") --> file explorer
-	use("lukas-reineke/indent-blankline.nvim") --> indent guides for neovim
 	use("akinsho/toggleterm.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope.nvim") --> Find, Filter, Preview, Pick. All lua, all the time.
 	use("numToStr/Comment.nvim")
-	use("ggandor/lightspeed.nvim") --> motion plugin with incremental input processing, allowing for unparalleled speed with near-zero cognitive effort
-	use("rcarriga/nvim-notify")
 	use("windwp/nvim-autopairs")
-	use("sunjon/shade.nvim") --> dim inactive windows
 	use("fladson/vim-kitty") --> kitty syntax highlighting
-	use("jbyuki/nabla.nvim")
 
 	--> colorschemes
     use 'ellisonleao/gruvbox.nvim'
@@ -31,14 +26,11 @@ use {
     end
 }
 
-	use("nvim-neorg/neorg")
-
 	--> treesitter & treesitter modules/plugins
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) --> treesitter
 	use("nvim-treesitter/nvim-treesitter-textobjects") --> textobjects
 	use("nvim-treesitter/nvim-treesitter-refactor")
-	use("p00f/nvim-ts-rainbow")
-	use("nvim-treesitter/playground")
+	-- use("nvim-treesitter/playground")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	--> lsp
@@ -64,10 +56,14 @@ use {
 
     --> code snippets
     use('SirVer/ultisnips')
-    -- use('honza/vim-snippets')
+    use('honza/vim-snippets')
 
     --> Markdwon preview
-    use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+    use {
+  'iamcco/markdown-preview.nvim',
+  ft = 'markdown',
+  run = 'cd app && yarn install'
+  }
 
     use('tpope/vim-repeat') --> to repeat commands very good
       -- Automatically set up your configuration after cloning packer.nvim

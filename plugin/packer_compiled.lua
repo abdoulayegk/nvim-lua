@@ -110,16 +110,6 @@ _G.packer_plugins = {
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
   },
-  ["indent-blankline.nvim"] = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
-    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
-  },
-  ["lightspeed.nvim"] = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/lightspeed.nvim",
-    url = "https://github.com/ggandor/lightspeed.nvim"
-  },
   ["lspkind-nvim"] = {
     loaded = true,
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
@@ -136,22 +126,11 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["markdown-preview.nvim"] = {
-    commands = { "MarkdownPreview" },
     loaded = false,
     needs_bufread = false,
     only_cond = false,
     path = "/home/balde/.local/share/nvim/site/pack/packer/opt/markdown-preview.nvim",
     url = "https://github.com/iamcco/markdown-preview.nvim"
-  },
-  ["nabla.nvim"] = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/nabla.nvim",
-    url = "https://github.com/jbyuki/nabla.nvim"
-  },
-  neorg = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/neorg",
-    url = "https://github.com/nvim-neorg/neorg"
   },
   ["null-ls.nvim"] = {
     loaded = true,
@@ -182,11 +161,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/nvim-lspconfig",
     url = "https://github.com/neovim/nvim-lspconfig"
-  },
-  ["nvim-notify"] = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/nvim-notify",
-    url = "https://github.com/rcarriga/nvim-notify"
   },
   ["nvim-terminal"] = {
     config = { "\27LJ\2\nX\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\18nvim-terminal\frequire\vhidden\6o\bvim\0" },
@@ -219,11 +193,6 @@ _G.packer_plugins = {
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/nvim-ts-context-commentstring",
     url = "https://github.com/JoosepAlviste/nvim-ts-context-commentstring"
   },
-  ["nvim-ts-rainbow"] = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/nvim-ts-rainbow",
-    url = "https://github.com/p00f/nvim-ts-rainbow"
-  },
   ["nvim-web-devicons"] = {
     loaded = true,
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
@@ -234,20 +203,10 @@ _G.packer_plugins = {
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
   },
-  playground = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/playground",
-    url = "https://github.com/nvim-treesitter/playground"
-  },
   ["plenary.nvim"] = {
     loaded = true,
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/plenary.nvim",
     url = "https://github.com/nvim-lua/plenary.nvim"
-  },
-  ["shade.nvim"] = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/shade.nvim",
-    url = "https://github.com/sunjon/shade.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
@@ -273,6 +232,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/vim-repeat",
     url = "https://github.com/tpope/vim-repeat"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/balde/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   }
 }
 
@@ -285,12 +249,13 @@ time([[Config for alpha-nvim]], false)
 time([[Config for nvim-terminal]], true)
 try_loadstring("\27LJ\2\nX\0\0\3\0\6\0\n6\0\0\0009\0\1\0+\1\2\0=\1\2\0006\0\3\0'\2\4\0B\0\2\0029\0\5\0B\0\1\1K\0\1\0\nsetup\18nvim-terminal\frequire\vhidden\6o\bvim\0", "config", "nvim-terminal")
 time([[Config for nvim-terminal]], false)
-
--- Command lazy-loads
-time([[Defining lazy-load commands]], true)
-pcall(vim.cmd, [[command -nargs=* -range -bang -complete=file MarkdownPreview lua require("packer.load")({'markdown-preview.nvim'}, { cmd = "MarkdownPreview", l1 = <line1>, l2 = <line2>, bang = <q-bang>, args = <q-args>, mods = "<mods>" }, _G.packer_plugins)]])
-time([[Defining lazy-load commands]], false)
-
+vim.cmd [[augroup packer_load_aucmds]]
+vim.cmd [[au!]]
+  -- Filetype lazy-loads
+time([[Defining lazy-load filetype autocommands]], true)
+vim.cmd [[au FileType markdown ++once lua require("packer.load")({'markdown-preview.nvim'}, { ft = "markdown" }, _G.packer_plugins)]]
+time([[Defining lazy-load filetype autocommands]], false)
+vim.cmd("augroup END")
 if should_profile then save_profiles() end
 
 end)
