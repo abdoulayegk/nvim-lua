@@ -53,8 +53,8 @@ opt.history = 100         -- remember n lines in history
 opt.lazyredraw = true     -- faster scrolling
 opt.smartindent = true                -- make indenting smarter again
 vim.o.fileformat = vim.bo.fileformat
-
-
-
 --
+-- Ignore compiled files
+opt.wildignore = "__pycache__"
+opt.wildignore = opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }
 
