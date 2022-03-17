@@ -21,6 +21,4 @@ require("lsp-config.null-ls")
 -- require ("alpha-config.alpha")
 -- Codeformatting
 require ("formatter-config.formatter")
---Popup terminal
-require ("terminal-config.terminal")
 

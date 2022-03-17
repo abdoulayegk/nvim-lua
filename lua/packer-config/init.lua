@@ -28,9 +28,9 @@ use {
 
 	--> treesitter & treesitter modules/plugins
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) --> treesitter
-	use("nvim-treesitter/nvim-treesitter-textobjects") --> textobjects
+	-- use("nvim-treesitter/nvim-treesitter-textobjects") --> textobjects
 	use("nvim-treesitter/nvim-treesitter-refactor")
-	-- use("nvim-treesitter/playground")
+	use("nvim-treesitter/playground")
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 
 	--> lsp
@@ -43,6 +43,7 @@ use {
 	use("hrsh7th/cmp-nvim-lsp") --> LSP source for nvim-cmp
 	use("saadparwaiz1/cmp_luasnip") --> Snippets source for nvim-cmp
 	use("L3MON4D3/LuaSnip") --> Snippets plugin
+    use 'hrsh7th/nvim-compe' --> added plugin for completion
 
     use("mhartington/formatter.nvim") --> code formatting
 

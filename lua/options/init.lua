@@ -22,7 +22,7 @@ set.splitbelow = true
 set.splitright = true
 set.wrap = false
 set.breakindent = true
-set.scrolloff = 7
+set.scrolloff = 9
 set.fileencoding = "utf-8"
 set.conceallevel = 2
 

@@ -1,9 +1,13 @@
 require'nvim-tree'.setup {
     auto_close = true,
     diagnostics = {
-        enable = true,
+        enable = false,
     },
     view = {
-        auto_resize = true
+        width = 30,
+        height = 30,
+        side = 'left',
+        auto_resize = false,
     },
 }
+
