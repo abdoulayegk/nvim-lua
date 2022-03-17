@@ -7,7 +7,6 @@ require("barbar-config")
 require("nvim-tree-config")
 require("toggleterm-config")
 require("comment-nvim-config")
--- require("indent-blankline-config")
 
 -- tree-sitter and tree-sitter plugins
 require("treesitter-config")
