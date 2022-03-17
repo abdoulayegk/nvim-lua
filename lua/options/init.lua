@@ -58,3 +58,6 @@ vim.o.fileformat = vim.bo.fileformat
 opt.wildignore = "__pycache__"
 opt.wildignore = opt.wildignore + { "*.o", "*~", "*.pyc", "*pycache*" }
 
+vim.g.python3_host_prog = '/usr/bin/python3'
+vim.opt.exrc = true
+
