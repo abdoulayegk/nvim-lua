@@ -14,10 +14,11 @@ require("treesitter-config")
 require("lsp-config.language-servers")
 require("lsp-config.lspsaga")
 require("lsp-config.completion")
+require("lsp-config.cmpe_nvim")
 require("lsp-config.null-ls")
 
 -- Startup
--- require ("alpha-config.alpha")
+require ("lsp-diagnostics")
 -- Codeformatting
 require ("formatter-config.formatter")
 

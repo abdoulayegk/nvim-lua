@@ -18,13 +18,13 @@ return require("packer").startup(function()
     use 'ellisonleao/gruvbox.nvim'
 
     --> Neovim statup
-use {
+   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
     config = function ()
         require'alpha'.setup(require'alpha.themes.startify'.opts)
     end
-}
+     }
 
 	--> treesitter & treesitter modules/plugins
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) --> treesitter
@@ -45,7 +45,7 @@ use {
 	use("L3MON4D3/LuaSnip") --> Snippets plugin
 
     use 'hrsh7th/nvim-compe' --> added plugin for completion
-    -- use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+    use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
 
 
     use("mhartington/formatter.nvim") --> code formatting
@@ -59,20 +59,19 @@ use {
      }
 
     --> code snippets
-    use('SirVer/ultisnips')
-    use('honza/vim-snippets')
+     use "rafamadriz/friendly-snippets"
 
     --> Markdwon preview
     use {
-  'iamcco/markdown-preview.nvim',
-  ft = 'markdown',
-  run = 'cd app && yarn install'
-  }
+    'iamcco/markdown-preview.nvim',
+     ft = 'markdown',
+     run = 'cd app && yarn install'
+     }
 
     use('tpope/vim-repeat') --> to repeat commands very good
       -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
-   if PACKER_BOOTSTRAP then
+    if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
 end)

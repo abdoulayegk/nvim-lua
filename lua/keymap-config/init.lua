@@ -60,6 +60,7 @@ augroup END
 
 opt.colorcolumn = '80'        -- line lenght marker at 80 columns
 
+vim.o.completeopt = "menuone,noselect"
 
 -- Markdown preview settings
 keymap('n', '<Leader>m', ':MarkdownPreview<CR>', {noremap = true})
