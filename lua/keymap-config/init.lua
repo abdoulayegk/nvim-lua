@@ -13,6 +13,7 @@ map("n", "<leader>gt", ":NvimTreeFocus<CR>", opts)
 map("n", "<leader>f", ":Telescope find_files<cr>", opts)
 map("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
 map("n", "<leader>fb", ":Telescope buffers<cr>", opts)
+map('n', '<Leader>o', ':Telescope oldfiles<CR>', { noremap = true, silent = true })
 --> barbar mappings <--
 map("n", "<A-,>", ":BufferPrevious<CR>", opts)
 map("n", "<A-.>", ":BufferNext<CR>", opts)
@@ -36,6 +37,14 @@ map("n", "<leader>bl", ":BufferOrderByLanguage<CR>", opts)
 --> nabla
 map("n", "<C-r>", ':lua require("nabla").action()<CR>', opts)
 map("n", "<C-p>", ':lua require("nabla").popup()<CR>', opts)
+
+--> diagnostics
+map('n', '<Leader>g', ':ToggleDiag<CR>', { noremap = true, silent = true })
+map("n", "<leader>du", "<Plug>(toggle-lsp-diag-underline)", {silent = true })
+map("n", "<leader>ds", "<Plug>(toggle-lsp-diag-signs)", {silent = true })
+map("n", "<leader>dv", "<Plug>(toggle-lsp-diag-vtext)", {silent = true })
+map("n", "<leader>di", "<Plug>(toggle-lsp-diag-update_in_insert)", {silent = true })
+
 
 --                                   basic settings
 -- Shorten function name
