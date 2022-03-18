@@ -47,6 +47,12 @@ map("n", "<leader>di", "<Plug>(toggle-lsp-diag-update_in_insert)", {silent = tru
 
 
 --                                   basic settings
+map('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+
+map('n', '<TAB>', ':BufferLineCycleNext<CR>', { noremap = true, silent = true })
+map('n', '<S-TAB>', ':BufferLineCyclePrev<CR>', { noremap = true, silent = true })
+
+
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
 keymap("i", "jj", "<ESC>", opts)

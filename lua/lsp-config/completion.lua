@@ -57,6 +57,8 @@ cmp.setup({
 		{ name = "neorg" },
 		{ name = "vsnip" },
 		{ name = "buffer" },
+		{ name = "ultisnips" },
+
 	},
 })
 

@@ -29,9 +29,9 @@ return require("packer").startup(function()
 	--> treesitter & treesitter modules/plugins
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) --> treesitter
 	-- use("nvim-treesitter/nvim-treesitter-textobjects") --> textobjects
-	use("nvim-treesitter/nvim-treesitter-refactor")
-	use("nvim-treesitter/playground")
-	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use"nvim-treesitter/nvim-treesitter-refactor"
+	use"nvim-treesitter/playground"
+	use"JoosepAlviste/nvim-ts-context-commentstring"
 
 	--> lsp
 	use("neovim/nvim-lspconfig") --> Collection of configurations for built-in LSP client
@@ -59,8 +59,9 @@ return require("packer").startup(function()
      }
 
     --> code snippets
-     use "rafamadriz/friendly-snippets"
-
+    --> code snippets
+    use('SirVer/ultisnips')
+    use('honza/vim-snippets')
     --> Markdwon preview
     use {
     'iamcco/markdown-preview.nvim',
