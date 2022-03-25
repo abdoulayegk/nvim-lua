@@ -7,10 +7,10 @@ local opts = { noremap = true, silent = true }
 vim.g.mapleader = "," -- leader key
 
 --> nvim tree mappings <--
-map("n", "<leader>t", ":NvimTreeToggle<CR>", opts)
+map("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 map("n", "<leader>gt", ":NvimTreeFocus<CR>", opts)
 --> telescope mappings <--
-map("n", "<leader>f", ":Telescope find_files<cr>", opts)
+map("n", "<leader>t", ":Telescope find_files<cr>", opts)
 map("n", "<leader>fg", ":Telescope live_grep<cr>", opts)
 map("n", "<leader>fb", ":Telescope buffers<cr>", opts)
 map('n', '<Leader>o', ':Telescope oldfiles<CR>', { noremap = true, silent = true })
@@ -59,7 +59,7 @@ keymap("i", "jj", "<ESC>", opts)
 
 --> Quick save and exit neovim
 keymap('n', '<Leader>w', ':write<CR>', {noremap = true})
-keymap('n', '<Leader>e', ':quit!<CR>', {noremap = true})
+keymap('n', '<Leader>q', ':quit!<CR>', {noremap = true})
 
 -->Stay in indent mode
 keymap("v", "<", "<gv", opts)
