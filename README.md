@@ -27,7 +27,7 @@ sudo pacman -S nodejs npm
 for prettier to work you need to install it by running this command.
 
 ```bash
-npm install --save-dev prettier prettier-plugin-solidity
+sudo npm install -g prettier 
 ```
 
 - Note the above command my not work sometime if that the case for you then go to
