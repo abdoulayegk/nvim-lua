@@ -21,3 +21,6 @@ require ("lsp-diagnostics")
 -- Codeformatting
 require ("formatter-config.formatter")
 
+-- Telescope
+require("telescope-config")
+require("dashboard-config")

@@ -35,13 +35,8 @@ return require("packer").startup(function()
     use 'ellisonleao/gruvbox.nvim'
 
     --> Neovim statup
-   use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-    config = function ()
-        require'alpha'.setup(require'alpha.themes.startify'.opts)
-    end
-     }
+    use {'glepnir/dashboard-nvim'}
+
 
 	--> treesitter & treesitter modules/plugins
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) --> treesitter
@@ -64,6 +59,23 @@ return require("packer").startup(function()
 
     use 'hrsh7th/nvim-compe' --> added plugin for completion
     use 'WhoIsSethDaniel/toggle-lsp-diagnostics.nvim'
+
+    -- prettier neovim
+    use('MunifTanjim/prettier.nvim')
+
+    -- which key
+    -- Lua
+use {
+  "folke/which-key.nvim",
+  config = function()
+    require("which-key").setup {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  end
+}
+
 
 
     use("mhartington/formatter.nvim") --> code formatting

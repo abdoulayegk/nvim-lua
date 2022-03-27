@@ -26,9 +26,11 @@ local on_attach = function(client, bufnr)
 end
 
 local servers = {
--- 	-- "pyright",
--- 	-- "clangd",
--- 	-- "eslint",
+	"pyright",
+	"emmet-ls",
+	"dockerls",
+	"tsserver",
+	"eslint",
 }
 
 -- ---@diagnostic disable-next-line: undefined-global
