@@ -7,7 +7,9 @@ local on_attach = function(client, bufnr)
 	local function buf_set_option(...)
 		vim.api.nvim_buf_set_option(bufnr, ...)
 	end
-
+	--> added code to desable dignostics
+	client.server_capabilities.completionProvider = false
+       --> end
 	buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 
 	local opts = { noremap = true, silent = true }
