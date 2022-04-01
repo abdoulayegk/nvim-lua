@@ -84,11 +84,6 @@ _G.packer_plugins = {
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/barbar.nvim",
     url = "https://github.com/romgrk/barbar.nvim"
   },
-  ["cmp-buffer"] = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/cmp-buffer",
-    url = "https://github.com/hrsh7th/cmp-buffer"
-  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/cmp-nvim-lsp",
@@ -109,15 +104,15 @@ _G.packer_plugins = {
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/friendly-snippets",
     url = "https://github.com/rafamadriz/friendly-snippets"
   },
-  ["gruvbox-material"] = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/gruvbox-material",
-    url = "https://github.com/sainnhe/gruvbox-material"
-  },
   ["gruvbox.nvim"] = {
     loaded = true,
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/gruvbox.nvim",
     url = "https://github.com/ellisonleao/gruvbox.nvim"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/balde/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
   },
   ["lightspeed.nvim"] = {
     loaded = true,
@@ -250,11 +245,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/balde/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["vim-repeat"] = {
-    loaded = true,
-    path = "/home/balde/.local/share/nvim/site/pack/packer/start/vim-repeat",
-    url = "https://github.com/tpopetpope/vim-repeat"
   },
   ["which-key.nvim"] = {
     loaded = true,

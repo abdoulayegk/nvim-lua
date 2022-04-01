@@ -10,7 +10,7 @@ set.smarttab = true
 set.shiftwidth = 4
 set.tabstop = 4
 
-set.hlsearch = false
+set.hlsearch = true
 set.incsearch = true
 set.ignorecase = true
 set.smartcase = true
@@ -26,14 +26,14 @@ set.fileencoding = "utf-8"
 set.conceallevel = 2
 
 set.relativenumber = true
-set.number = true
--- set.cursorline = true
+set.cursorline = true
 set.wildmenu = true
 set.completeopt = "menuone,noselect"
 
 set.hidden = true
 set.mouse = "a"
 
+vim.o.background = "dark" -- or "light" for light mode
 vim.cmd([[colorscheme gruvbox]])
 
 -- remove whitespace on save

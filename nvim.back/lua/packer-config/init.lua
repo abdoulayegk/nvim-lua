@@ -7,6 +7,7 @@ return require("packer").startup(function()
 	use("nvim-lualine/lualine.nvim") --> a statusline written in lua
 	use("romgrk/barbar.nvim") --> tabs for neovim
 	use("kyazdani42/nvim-tree.lua") --> file explorer
+	use("lukas-reineke/indent-blankline.nvim") --> indent guides for neovim
 	use("akinsho/toggleterm.nvim")
 	use("nvim-lua/plenary.nvim")
 	use("nvim-telescope/telescope.nvim") --> Find, Filter, Preview, Pick. All lua, all the time.
@@ -15,18 +16,25 @@ return require("packer").startup(function()
 	use("windwp/nvim-autopairs")
 	use("sunjon/shade.nvim") --> dim inactive windows
 	use({ "folke/which-key.nvim" })
-
 	--> colorschemes
-	use("sainnhe/gruvbox-material")
 	use("ellisonleao/gruvbox.nvim")
 
-	use("nvim-neorg/neorg")
 	--> Markdwon preview
 	use({
 		"iamcco/markdown-preview.nvim",
 		ft = "markdown",
 		run = "cd app && yarn install",
 	})
+
+	--> code snippets
+	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
+
+	use("WhoIsSethDaniel/toggle-lsp-diagnostics.nvim") --> toggle diagnostics
+
+	--> Neovim statup
+	use({ "glepnir/dashboard-nvim" })
+
+	use("nvim-neorg/neorg")
 
 	--> treesitter & treesitter modules/plugins
 	use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }) --> treesitter
@@ -43,14 +51,7 @@ return require("packer").startup(function()
 	use("tami5/lspsaga.nvim") --> icons for LSP diagnostics
 	use("onsails/lspkind-nvim") --> vscode-like pictograms for neovim lsp completion items
 	use("hrsh7th/nvim-cmp") --> Autocompletion plugin
-	use({ "hrsh7th/cmp-buffer" })
-
 	use("hrsh7th/cmp-nvim-lsp") --> LSP source for nvim-cmp
 	use("saadparwaiz1/cmp_luasnip") --> Snippets source for nvim-cmp
 	use("L3MON4D3/LuaSnip") --> Snippets plugin
-	use("WhoIsSethDaniel/toggle-lsp-diagnostics.nvim") --> toggle diagnostics
-	use("rafamadriz/friendly-snippets") -- a bunch of snippets to use
-
-	--> Neovim statup
-	use({ "glepnir/dashboard-nvim" })
 end)
