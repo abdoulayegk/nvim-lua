@@ -1,22 +1,22 @@
-require("packer-config")
-require("options")
-require("keymap-config")
-require("autopairs-config")
-require("lualine-config")
-require("barbar-config")
-require("nvim-tree-config")
-require("toggleterm-config")
-require("comment-nvim-config")
-require("neorg-config")
-require("colorizer-config")
-require("shade-config")
---> tree-sitter and tree-sitter plugins
-require("treesitter-config")
---> lsp modules
-require("lsp-config.language-servers")
-require("lsp-config.lspsaga")
--- require("lsp-config.completion")
-require("lsp-config.cmp")
-require("lsp-config.null-ls")
-require("dashboard-config")
-require("lsp-diagnostics")
+require "user.options"
+require "user.keymaps"
+require "user.plugins"
+require "user.autocommands"
+require "user.colorscheme"
+require "user.cmp"
+require "user.telescope"
+require "user.gitsigns"
+require "user.treesitter"
+require "user.autopairs"
+require "user.comment"
+require "user.nvim-tree"
+require "user.bufferline"
+require "user.lualine"
+require "user.toggleterm"
+require "user.project"
+require "user.impatient"
+require "user.illuminate"
+require "user.indentline"
+require "user.alpha"
+require "user.lsp"
+require "user.dap"
