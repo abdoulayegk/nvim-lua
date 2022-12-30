@@ -41,7 +41,6 @@ keymap("n", "<leader>w", "<cmd>w!<CR>", opts)
 --fast quit
 keymap("n", "<leader>q", "<cmd>q!<CR>", opts)
 
-
 -- Close buffers
 keymap("n", "<S-q>", "<cmd>Bdelete!<CR>", opts)
 
@@ -87,3 +86,17 @@ keymap("n", "<leader>dt", "<cmd>lua require'dap'.terminate()<cr>", opts)
 
 --Black code formatting
 keymap("n", "<leader>b", ":Black<CR>", opts)
+
+--Makdownpreviewer
+vim.cmd([[ 
+" markdown preview
+ au FileType markdown nmap <leader>m :MarkdownPreview<CR>
+]])
+
+--Running your code with F9 Key on your keyboard
+vim.cmd([[ 
+autocmd filetype python nnoremap <F9> :w <bar> exec '!python '.shellescape('%')<CR>
+autocmd filetype c nnoremap <F9> :w <bar> exec '!gcc '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd filetype cpp nnoremap <F9> :w <bar> exec '!g++ '.shellescape('%').' -o '.shellescape('%:r').' && ./'.shellescape('%:r')<CR>
+autocmd filetype js nnoremap <F9> :w <bar> exec '!node '.shellescape('%')<CR>
+]])

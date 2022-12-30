@@ -44,11 +44,11 @@ Run `nvim` and wait for the plugins to be installed
 
 Open `nvim` and enter the following:
 
-```
+```bash
 :checkhealth
 ```
 
-You'll probably notice you don't have support for copy/paste also that python and node haven't been setup
+You will probably notice you do not have support for copy or paste also that python and node have not been setup.
 
 So let's fix that
 
@@ -89,6 +89,8 @@ We will also need `ripgrep` for Telescope to work:
 
 **NOTE** make sure you have [node](https://nodejs.org/en/) installed, I recommend a node manager like [fnm](https://github.com/Schniz/fnm).
 
+If you want to replace a global vim scrip to lua you can do something like: `let *replace* vim.g`
+
 ## Fonts
 
 I recommend using the following repo to get a "Nerd Font" (Font that supports icons)
@@ -103,9 +105,7 @@ To add a new LSP
 
 First Enter:
 
-```
-:LspInstallInfo
-```
+`:LspInstallInfo`
 
 and press `i` on the Language Server you wish to install
 
@@ -114,7 +114,8 @@ Next you will need to add the server to this list: [servers](https://github.com/
 ### Formatters and linters
 
 Make sure the formatter or linter is installed and add it to this setup function: [null-ls](https://github.com/LunarVim/nvim-basic-ide/blob/8b9ec3bffe8c8577042baf07c75408532a733fea/lua/user/lsp/null-ls.lua#L13)
-* You should first install the formatter with the help of Maison using the following command: ``:Maison Install black isort``
+
+- You should first install the formatter with the help of Maison using the following command: `:Maison Install black isort`
 
 **NOTE** Some are already setup as examples, remove them if you want
 

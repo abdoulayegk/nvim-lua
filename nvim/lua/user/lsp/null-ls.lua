@@ -1,3 +1,48 @@
+local present, null_ls = pcall(require, "null-ls")
+
+if not present then
+	return
+end
+
+local b = null_ls.builtins
+
+local sources = {
+	-- format html and markdown
+	-- b.formatting.prettierd.with({ filetypes = { "html", "yaml", "markdown" } }),
+	b.formatting.prettier.with({
+		extra_filetypes = { "toml" },
+		extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" },
+	}),
+	-- markdown diagnostic
+	b.diagnostics.markdownlint,
+	-- Lua formatting
+	b.formatting.stylua,
+	b.formatting.black.with({ extra_args = { "--fast" } }),
+	-- b.formatting.clang_format,
+}
+
+local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
+local on_attach = function(client, bufnr)
+	if client.supports_method("textDocument/formatting") then
+		vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
+		vim.api.nvim_create_autocmd("BufWritePre", {
+			group = augroup,
+			buffer = bufnr,
+			callback = function()
+				-- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
+				vim.lsp.buf.formatting_sync()
+			end,
+		})
+	end
+end
+
+null_ls.setup({
+	debug = true,
+	sources = sources,
+	on_attach = on_attach,
+})
+
+-------------------------------------------------------------------------------------------->
 -- local null_ls_status_ok, null_ls = pcall(require, "null-ls")
 -- if not null_ls_status_ok then
 --   return
@@ -30,45 +75,3 @@
 --     -- formatting.lua_format,
 --   },
 -- }
-
-
-local present, null_ls = pcall(require, "null-ls")
-
-if not present then
-  return
-end
-
-local b = null_ls.builtins
-
-local sources = {
-  -- format html and markdown
-  b.formatting.prettierd.with { filetypes = { "html", "yaml", "markdown" } },
-  -- markdown diagnostic
-  b.diagnostics.markdownlint,
-  -- Lua formatting
-  b.formatting.stylua,
-  b.formatting.black.with { extra_args = { "--fast" } },
-  b.formatting.clang_format,
-}
-
-local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-local on_attach = function(client, bufnr)
-  if client.supports_method "textDocument/formatting" then
-    vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
-      buffer = bufnr,
-      callback = function()
-        -- on 0.8, you should use vim.lsp.buf.format({ bufnr = bufnr }) instead
-        vim.lsp.buf.formatting_sync()
-        end,
-    })
-  end
-end
-
-null_ls.setup {
-  debug = true,
-  sources = sources,
-  on_attach = on_attach,
-}
-

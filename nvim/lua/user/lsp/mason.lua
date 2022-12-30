@@ -1,12 +1,12 @@
 local servers = {
 	"sumneko_lua",
-	-- "cssls",
+	"cssls",
 	"html",
 	"tsserver",
 	"pyright",
 	"bashls",
-	"jsonls",
-	"yamlls",
+	-- "jsonls",
+	"clangd",
 }
 
 local settings = {
@@ -50,3 +50,10 @@ for _, server in pairs(servers) do
 
 	lspconfig[server].setup(opts)
 end
+
+-- Never request clangd-language-server for formatting
+vim.lsp.buf.format({
+	filter = function(client)
+		return client.name ~= "clangd"
+	end,
+})
